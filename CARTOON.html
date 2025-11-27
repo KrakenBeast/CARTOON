@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doraemon Standard CSS Format</title>
+    <style>
+
+        :root {
+            --blue: #298abf;
+            --white: #fff;
+            --red: rgb(186, 62, 85);
+            --dark-red: rgb(140, 51, 77);
+            --yellow: rgb(225, 186, 111);
+            --black: #333;
+            --bg: #f0f0f0;
+
+            --head-h: 300px;
+            --head-w: 355px;
+            --body-w: 235px;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .doraemon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: scale(0.65);
+            position: relative;
+        }
+
+        /* Head and Face Styles */
+        .head {
+            height: var(--head-h);
+            width: var(--head-w);
+            border: 2px solid var(--black);
+            background: var(--blue);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: inset 0 0 10px #1976a8; /* shadow */
+        }
+
+        .face {
+            height: 250px;
+            width: 300px;
+            background: var(--white);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .eye-container { position: relative; }
+
+        .eye {
+            position: absolute;
+            width: 65px;
+            height: 84px;
+            border: 1px solid var(--black);
+            border-radius: 50%;
+            background: var(--white);
+            top: -36px;
+        }
+
+        .eye-left { left: 50%; transform: translateX(-100%); }
+        .eye-right { right: 50%; transform: translateX(100%); }
+
+        .eyeball {
+            height: 20px;
+            width: 15px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+        }
+
+        .eyeball-highlight {
+            height: 40%;
+            width: 40%;
+            display: inline-block;
+            background: var(--white);
+            position: absolute;
+            border-radius: 50%;
+            bottom: 10%;
+            left: 30%;
+        }
+
+        .nose {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--red);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 28px;
+            border: 1px solid var(--black);
+        }
+
+        .nose-line {
+            display: block;
+            width: 2px;
+            height: 50px;
+            background: var(--black);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .mustache-container {
+            position: absolute;
+            width: 85px;
+            height: 40px;
+            top: 60px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .mustache-hair {
+            position: absolute;
+            width: 100px;
+            background: var(--black);
+            height: 2px;
+        }
+        .whisk-l-1 { left: -100px; top: 0; transform: rotate(10deg); transform-origin: 100%; }
+        .whisk-l-2 { left: -100px; top: 50%; transform-origin: 100%; }
+        .whisk-l-3 { left: -100px; bottom: 0; transform: rotate(-10deg); transform-origin: 100%; }
+        .whisk-r-1 { right: -100px; top: 0; transform: rotate(-10deg); transform-origin: 0%; }
+        .whisk-r-2 { right: -100px; top: 50%; transform-origin: 0%; }
+        .whisk-r-3 { right: -100px; bottom: 0; transform: rotate(10deg); transform-origin: 0%; }
+
+
+        .mouth {
+            position: absolute;
+            width: 230px;
+            height: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 130px;
+            border: 2px solid var(--dark-red);
+            border-top: none;
+            border-radius: 0 0 100px 100px / 0 0 200px 200px;
+            background: var(--dark-red);
+        }
+
+        .tongue {
+            width: 40px;
+            height: 40px;
+            background: var(--red);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+
+        .belt {
+            z-index: 2;
+            width: var(--body-w);
+            height: 25px;
+            background: var(--red);
+            position: relative;
+            top: -20px;
+            border: 1px solid var(--black);
+            border-radius: 20px;
+        }
+
+        .bell {
+            height: 40px;
+            width: 40px;
+            background: var(--yellow);
+            border-radius: 50%;
+            border: 1px solid var(--black);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -10px);
+        }
+
+        .clapper {
+            width: 10px;
+            height: 10px;
+            background: var(--black);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            border-radius: 50%;
+        }
+
+        /* Body and Limbs Styles */
+        .body-container {
+            position: relative;
+            top: -20px;
+            height: 160px;
+            width: var(--body-w);
+        }
+
+        .body-side {
+            position: absolute;
+            width: 107px;
+            height: 120px;
+            top: -10px;
+            background: var(--blue);
+            border: 1px solid var(--black);
+            border-radius: 10px;
+        }
+
+        .body-left { left: 0; }
+        .body-right { right: 0; }
+
+        .dress {
+            position: absolute;
+            width: 188px;
+            height: 100px;
+            z-index: 2;
+            background: var(--white);
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid var(--black);
+            border-radius: 50%;
+        }
+
+        .pocket {
+            width: 70%;
+            height: 40px;
+            border: 1px solid var(--black);
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0 0 50% 50%;
+        }
+
+        .arm {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background: var(--blue);
+            border: 1px solid var(--black);
+            border-radius: 20px;
+        }
+
+        .arm-left { left: -20%; transform: rotate(30deg); }
+        .arm-right { right: -20%; transform: rotate(-30deg); }
+
+        .fist {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            border: 1px solid var(--black);
+        }
+
+        .leg {
+            position: absolute;
+            top: 100px;
+            width: 100px;
+            height: 40px;
+            background: var(--white);
+            border: 1px solid var(--black);
+            border-radius: 50%;
+        }
+
+        .leg-left { left: 5px; }
+        .leg-right { right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="doraemon">
+        
+        <div class="head">
+            <div class="face">
+                <div class="eye-container">
+                    <div class="eye eye-left">
+                        <div class="eyeball">
+                            <span class="eyeball-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="eye eye-right">
+                        <div class="eyeball">
+                            <span class="eyeball-highlight"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nose">
+                    <span class="nose-line"></span>
+                </div>
+                
+                <div class="mustache-container">
+                    <span class="mustache-hair whisk-l-1"></span>
+                    <span class="mustache-hair whisk-l-2"></span>
+                    <span class="mustache-hair whisk-l-3"></span>
+                    <span class="mustache-hair whisk-r-1"></span>
+                    <span class="mustache-hair whisk-r-2"></span>
+                    <span class="mustache-hair whisk-r-3"></span>
+                </div>
+
+                <div class="mouth">
+                    <span class="tongue"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="belt">
+            <div class="bell">
+                <span class="clapper"></span>
+            </div>
+        </div>
+        
+        <div class="body-container">
+            
+            <div class="arm arm-left">
+                <span class="fist"></span>
+            </div>
+            <div class="arm arm-right">
+                <span class="fist"></span>
+            </div>
+            
+            <div class="body-side body-left"></div>
+            <div class="body-side body-right"></div>
+            
+            <div class="dress">
+                <div class="pocket"></div>
+            </div>
+            
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+            
+        </div>
+    </div>
+</body>
+</html>
